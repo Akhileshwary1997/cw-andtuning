@@ -30,7 +30,7 @@ void *alloc(void *ud, void *ptr, size_t osize, size_t nsize)
 		return realloc(ptr, nsize);
 	}
 	
-JNIEXPORT jstring JNICALL Java_com_commonsware_abj_interp_lua_LuaInterpreter_executeLua
+JNIEXPORT jstring JNICALL Java_com_commonsware_android_tuning_lua_LuaActivity_executeLua
   (JNIEnv *env, jclass clazz, jstring script) {
 		jstring result;
 		lua_State *L=lua_newstate(alloc, (void *)0);
