@@ -16,7 +16,7 @@ package com.commonsware.android.tuning.prefs;
 
 import android.content.SharedPreferences.Editor;
 
-public class PrefsPersistApply extends AbstractPrefsPersist {
+public class ApplyStrategy extends AbstractPrefsPersistStrategy {
 
 	@Override
 	void persistAsync(Editor editor) {

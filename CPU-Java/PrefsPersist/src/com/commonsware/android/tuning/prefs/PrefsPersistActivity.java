@@ -34,6 +34,6 @@ public class PrefsPersistActivity extends Activity {
 		
 		((TextView)findViewById(R.id.value)).setText(String.valueOf(counter));
 		
-		AbstractPrefsPersist.persist(prefs.edit().putInt(KEY, counter+1));
+		AbstractPrefsPersistStrategy.persist(prefs.edit().putInt(KEY, counter+1));
 	}
 }

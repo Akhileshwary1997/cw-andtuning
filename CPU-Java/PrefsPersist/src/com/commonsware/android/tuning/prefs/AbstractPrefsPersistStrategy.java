@@ -17,26 +17,26 @@ package com.commonsware.android.tuning.prefs;
 import android.content.SharedPreferences;
 import android.os.Build;
 
-abstract public class AbstractPrefsPersist {
+abstract public class AbstractPrefsPersistStrategy {
 	abstract void persistAsync(SharedPreferences.Editor editor);
 	
-	private static final AbstractPrefsPersist INSTANCE=initImpl();
+	private static final AbstractPrefsPersistStrategy INSTANCE=initImpl();
 	
 	public static void persist(SharedPreferences.Editor editor) {
 		INSTANCE.persistAsync(editor);
 	}
 	
-	private static AbstractPrefsPersist initImpl() {
+	private static AbstractPrefsPersistStrategy initImpl() {
 		int sdk=new Integer(Build.VERSION.SDK).intValue();
 		
 		if (sdk<Build.VERSION_CODES.HONEYCOMB) {
-			return(new PrefsPersistCommitAsync());
+			return(new CommitAsyncStrategy());
 		}
 		
-		return(new PrefsPersistApply());
+		return(new ApplyStrategy());
 	}
 
-	static class PrefsPersistCommitAsync extends AbstractPrefsPersist {
+	static class CommitAsyncStrategy extends AbstractPrefsPersistStrategy {
 		@Override
 		void persistAsync(final SharedPreferences.Editor editor) {
 			(new Thread() {
