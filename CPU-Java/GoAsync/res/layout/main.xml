@@ -6,6 +6,9 @@
 		android:layout_height="wrap_content">
 	</EditText>
 	<Button android:layout_width="match_parent" android:id="@+id/button1"
-		android:layout_height="wrap_content" android:text="@string/nonasync" android:onClick="sendNonAsync"></Button>
-	<Button android:layout_width="match_parent" android:id="@+id/button2" android:layout_height="wrap_content" android:text="@string/async" android:onClick="sendAsync"></Button>
+		android:layout_height="wrap_content" android:text="@string/nonasync"
+		android:onClick="sendNonAsync"></Button>
+	<Button android:layout_width="match_parent" android:id="@+id/button2"
+		android:layout_height="wrap_content" android:text="@string/async"
+		android:onClick="sendAsync"></Button>
 </LinearLayout>
