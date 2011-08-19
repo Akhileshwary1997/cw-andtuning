@@ -36,8 +36,8 @@ static void nsieve(int m) {
 }
 
 void
-Java_com_commonsware_abj_weakbench_WeakBench_nsievenative( JNIEnv* env,
-                                                             jobject thiz )
+Java_com_commonsware_android_tuning_weakbench_WeakBench_nsievenative( JNIEnv* env,
+                                                                      jobject thiz )
 {
     int i=0;
     for (i = 0; i < 3; i++)
@@ -71,8 +71,8 @@ void eval_AtA_times_u(int N, const double u[], double AtAu[])
 
 
 void
-Java_com_commonsware_abj_weakbench_WeakBench_specnative( JNIEnv* env,
-                                                         jobject thiz )
+Java_com_commonsware_android_tuning_weakbench_WeakBench_specnative( JNIEnv* env,
+                                                                     jobject thiz )
 {
     int i;
     int N = 1000;
